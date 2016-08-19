@@ -1,4 +1,8 @@
-
+/*
+ * Jesus Hernandez
+ * EG3392A
+ * Assignment 1 Question 1
+ */
 public class ThePoint {
 	private int x;
 	private int y;
