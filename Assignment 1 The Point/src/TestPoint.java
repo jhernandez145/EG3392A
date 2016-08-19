@@ -2,7 +2,8 @@
  * Jesus Hernandez
  * EG3392A
  * Assignment 1 Question 1
- */import java.util.Scanner;
+ */
+import java.util.Scanner;
 public class TestPoint {
 
 	public static void main(String[] args) {
