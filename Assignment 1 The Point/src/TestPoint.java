@@ -29,7 +29,10 @@ public class TestPoint {
 		
 		input.close();
 		
-		System.out.println("\n\nDistance between points: " + point1.distance(point2));
+		System.out.println("\n\nDistance between points " + 
+							point1.toString() + " and " +
+							point2.toString() + " is " +
+						    point1.distance(point2));
 	}
 
 }

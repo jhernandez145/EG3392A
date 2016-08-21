@@ -25,7 +25,11 @@ public class ThePoint {
 	
 	public int distance(ThePoint otherPoint){
 		return (int) Math.sqrt(
-				Math.pow(((double)otherPoint.getX() - (double)x), 2.0) + 
+				Math.pow(((double)otherPoint.getX() - (double)x), 2.0) +
 				Math.pow(((double)otherPoint.getY() - (double)y), 2.0));
+	}
+	
+	public String toString(){
+		return "(" + x + "," + y + ")";
 	}
 }
