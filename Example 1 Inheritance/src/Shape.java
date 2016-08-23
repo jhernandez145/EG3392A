@@ -1,3 +1,4 @@
+//Good job on writing the abstract class and method. Aktunc
 import java.util.Date;
 //Since this is abstract, its constructor may not be called, instead one of it's subclasses will
 public abstract class Shape {
