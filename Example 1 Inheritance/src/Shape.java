@@ -9,12 +9,13 @@ public abstract class Shape {
 	 * Constructors
 	 */
 	public Shape(){
+		super();
 		filled = false;
 		color = "transperant";
 		dateCreated = new Date();
 	}
-	public Shape(boolean filled, String color){
-		this.filled = filled;
+	public Shape(String color){
+		super();
 		this.color = color;
 		dateCreated = new Date();		
 	}
