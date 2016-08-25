@@ -3,7 +3,11 @@
  * EG3392A
  * Assignment 2 Question 1
  */
+import java.text.DecimalFormat;
+
 public class Essay extends GradeActivity {
+	DecimalFormat twoDecimals = new DecimalFormat("0.00");
+	
 	private final static int GRAMMAR_MAX_POINTS = 25;
 	private final static int SPELLING_MAX_POINTS = 35;
 	private final static int CONTETNT_MAX_POINTS = 40;
@@ -22,14 +26,17 @@ public class Essay extends GradeActivity {
 		if (grammarGrade > GRAMMAR_MAX_POINTS) {
 			System.out.println("ERROR: Too many points for grammar section, setting to zero!");
 			this.grammarGrade = 0;
+			setScore(score - grammarGrade);
 		}
 		if (spellingGrade > SPELLING_MAX_POINTS) {
 			System.out.println("ERROR: Too many points for spelling section, setting to zero!");
 			this.spellingGrade = 0;
+			setScore(score - spellingGrade);
 		}
 		if (contentGrade > CONTETNT_MAX_POINTS) {
 			System.out.println("ERROR: Too many points for content section, setting to zero!");
 			this.contentGrade = 0;
+			setScore(score - contentGrade);
 		}
 
 	}
