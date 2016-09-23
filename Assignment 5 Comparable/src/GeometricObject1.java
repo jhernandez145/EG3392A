@@ -1,3 +1,8 @@
+/*
+ * Jesus Hernandez 614019
+ * 9-22-16
+ * Assignment 5 Question 2
+ */
 import java.util.Date;
 public abstract class GeometricObject1 implements Comparable{
 	private String color;

@@ -1,4 +1,8 @@
-
+/*
+ * Jesus Hernandez 614019
+ * 9-22-16
+ * Assignment 5 Question 2
+ */
 public class Circle extends GeometricObject1 {
 	private int radius;
 	public Circle() {

@@ -1,4 +1,8 @@
-
+/*
+ * Jesus Hernandez 614019
+ * 9-22-16
+ * Assignment 5 Question 2
+ */
 public class TestComparable {
 	public static void main(String[] args){
 		Circle circle = new Circle("Red", 5);

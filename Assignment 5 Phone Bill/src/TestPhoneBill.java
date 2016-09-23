@@ -1,3 +1,8 @@
+/*
+ * Jesus Hernandez 614019
+ * 9-22-16
+ * Assignment 5 Question 1
+ */
 import java.util.Scanner;
 import java.text.NumberFormat;
 import java.util.Locale;

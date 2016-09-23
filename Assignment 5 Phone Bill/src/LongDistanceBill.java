@@ -1,4 +1,8 @@
-
+/*
+ * Jesus Hernandez 614019
+ * 9-22-16
+ * Assignment 5 Question 1
+ */
 public class LongDistanceBill extends PhoneBill {
 	private double callRate;
 	

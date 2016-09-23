@@ -1,4 +1,8 @@
-
+/*
+ * Jesus Hernandez 614019
+ * 9-22-16
+ * Assignment 5 Question 2
+ */
 public class Rectangle extends GeometricObject1 {
 	private int length;
 	private int width;
