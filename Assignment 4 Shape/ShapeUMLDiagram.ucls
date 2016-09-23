@@ -21,7 +21,8 @@
     </display>  
   </class>  
   <class id="3" language="java" name="Rectangle" project="Assignment 4 Shape" 
-    file="/Assignment 4 Shape/src/Rectangle.java" binary="false" corner="BOTTOM_RIGHT">    
+    file="/Assignment In-Class 3 Shape (Interfaces &amp; Polymorphism)/src/Rectangle.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
     <position height="243" width="149" x="332" y="401"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
