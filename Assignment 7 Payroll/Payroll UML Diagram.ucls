@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.1.10" icons="true" automaticImage="PNG" always-add-relationships="false" 
+  generalizations="true" realizations="true" associations="true" dependencies="false" nesting-relationships="true" 
+  router="FAN">  
+  <class id="1" language="java" name="InvalidEmployeeNumberID" project="Assignment 7 Payroll" 
+    file="/Assignment 7 Payroll/src/InvalidEmployeeNumberID.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="188" x="246" y="31"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="Payroll" project="Assignment 7 Payroll" 
+    file="/Assignment 7 Payroll/src/Payroll.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="369" width="205" x="474" y="31"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="PayrollTest" project="Assignment 7 Payroll" 
+    file="/Assignment 7 Payroll/src/PayrollTest.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="113" x="719" y="31"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="InvalidEmployeeName" project="Assignment 7 Payroll" 
+    file="/Assignment 7 Payroll/src/InvalidEmployeeName.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="148" x="872" y="31"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="InvalidHourlyPayRate" project="Assignment 7 Payroll" 
+    file="/Assignment 7 Payroll/src/InvalidHourlyPayRate.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="167" x="1060" y="31"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="InvalidHoursWorkedInWeek" project="Assignment 7 Payroll" 
+    file="/Assignment 7 Payroll/src/InvalidHoursWorkedInWeek.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="197" x="1267" y="31"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
