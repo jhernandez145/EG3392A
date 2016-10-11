@@ -21,6 +21,9 @@ public class Division {
 		}
 		//Does not want to execute my code. Prints exception message and does not allow to input again.
 		//TODO Find out how to ask for input again.
+		
+		//You can probably use a do-while loop. If necessary use a break statement. 
+		//Break out of the loop if the input is valid.
 		catch(InputMismatchException e){
 			System.out.println("InputMismatchException!");
 			System.out.println("Please re-enter numbers.");
