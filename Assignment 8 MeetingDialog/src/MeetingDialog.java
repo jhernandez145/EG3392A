@@ -5,94 +5,82 @@
  */
 
 import javax.swing.*;
-import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class MeetingDialog {
+public class MeetingDialog extends JFrame {
+	private static final long serialVersionUID = 1L;
+
+	public MeetingDialog() {
+		setLayout(null);
+		setSize(1200, 600);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setTitle("Meeting Dialog");
+		setResizable(false);
+		setLocationRelativeTo(null);
+	}
+
 	public static void main(String[] args) {
-		final String TITLE = "Meeting Dialog";
-		final String ENTER_TITLE = "Enter";
-		final String NAME_LABEL = "Name:";
-		
-		final int WINDOW_WIDTH = 1000;
-		final int WINDOW_HEIGHT = 500;
-		
-		final int TEXTFIELD_HEIGHT = 50;
-		final int TEXTFIELD_WIDTH = 500;
-		
-		/*
-		 *  CREATE ALL THE SWING OBJECTS 
-		 */
-		
-		// JFrame
-		JFrame frame = new JFrame(TITLE);
-		
-		
-		// JLabels
-		JLabel instructionLabel = new JLabel();
-		JLabel nameLabel = new JLabel(NAME_LABEL);
-		
-		// JTextField
-		JTextField inputField = new JTextField();
-		
-		// JButtons
-		JButton enterButton = new JButton(ENTER_TITLE);
-		
-		/*
-		 *  SETS THE LABEL WITH GIVEN PROPERTIES
-		 */
-		
-		
-		// nameLabel
-		nameLabel.setLayout(null);
-		nameLabel.setBounds((WINDOW_WIDTH/4), (TEXTFIELD_HEIGHT*5), 50, 50);
-		nameLabel.setVisible(true);
-		
-		/*
-		 *  SETS THE TEXTFIELD WITH GIVEN PROPERTIES
-		 */
-		inputField.setLayout(null);
-		inputField.setBounds((WINDOW_WIDTH/3), (WINDOW_HEIGHT/2), TEXTFIELD_WIDTH, TEXTFIELD_HEIGHT);
-		inputField.setBackground(Color.WHITE);
-		inputField.setVisible(true);
-		
-		
-		/*
-		 *  SETS THE BUTTONS WITH GIVEN PROPERTIES
-		 */
-		enterButton.setEnabled(true);
-		enterButton.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				String messageAsk = "Is " + inputField.getText() + " your name?";
-				String messageGreet = "Nice to meet you " + inputField.getText();
-				int response = JOptionPane.showConfirmDialog(frame, messageAsk, "Confirm name", JOptionPane.YES_NO_OPTION);
-				
-				if(response == JOptionPane.YES_OPTION){
-					JOptionPane.showMessageDialog(frame, messageGreet);
-				}
-			}
-		});
-		enterButton.setBounds((WINDOW_WIDTH/2), ((WINDOW_HEIGHT/2) + 100), 100, 50);
-		enterButton.setVisible(true);
-		
-		/*
-		 * ADD TEXTFIELD/LABELS/BUTTON AND SET FRAME PROPERTIES
-		 */
-		
-		frame.add(inputField);
-		frame.add(instructionLabel);
-		frame.add(nameLabel);
-		frame.add(enterButton);
-		
-		//Set JFrame properties
-		frame.setLayout(null);
-		frame.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
-		frame.setLocationRelativeTo(null);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		MeetingDialog frame = new MeetingDialog();
+
+		JPanel panel = new JPanel(null);
+		setPanelProperties(frame, panel);
+
+		JTextField textField = new JTextField();
+		setTextFieldProperties(panel, textField);
+
+		JLabel label = new JLabel("Name:");
+		setLabelProperties(panel, label);
+
+		JButton button = new JButton("Enter");
+		setButtonProperties(panel, button, textField);
+
 		frame.setVisible(true);
 	}
 
+	public static void setPanelProperties(JFrame frame, JPanel panel) {
+		panel.setLayout(null);
+		panel.setBounds(0, 0, frame.getWidth(), frame.getHeight());
+		panel.setVisible(true);
+		frame.add(panel);
+	}
+
+	public static void setTextFieldProperties(JPanel panel, JTextField textField) {
+		textField.setLayout(null);
+		textField.setBounds(450, 300, 300, 50);
+		textField.setFont(new Font("Dialog", Font.BOLD, 15));
+		textField.setVisible(true);
+		panel.add(textField);
+	}
+
+	public static void setLabelProperties(JPanel panel, JLabel label) {
+		label.setLayout(null);
+		label.setBounds(400, 275, 100, 100);
+		label.setFont(new Font("Dialog", Font.BOLD, 15));
+		label.setVisible(true);
+		panel.add(label);
+	}
+
+	public static void setButtonProperties(JPanel panel, JButton button, JTextField textField){
+		button.setEnabled(true);
+		button.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String messageAsk = "Is " + textField.getText() + " your name?";
+				String messageGreet = "Nice to meet you, " + textField.getText() + "!";
+				String messageConfirm = "Confirm name: " + textField.getText();
+				int response = JOptionPane.showConfirmDialog(panel, messageAsk, messageConfirm, JOptionPane.YES_NO_OPTION);
+				
+				if(response == JOptionPane.YES_OPTION){
+					JOptionPane.showMessageDialog(panel, messageGreet);
+				}
+			}
+		});
+		
+		button.setBounds(650, 375, 100, 50);
+		button.setVisible(true);
+		panel.add(button);
+	}
 }
