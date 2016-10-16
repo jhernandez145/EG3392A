@@ -13,26 +13,27 @@ public class FileSum {
 		int number = 0;
 
 		Scanner input = new Scanner(System.in);
-		File file = new File("Numbers.txt");
-		PrintWriter output = new PrintWriter(file);
+		File file = new File("TextFiles\\Numbers.txt"); // Use the included Numbers.txt files from the TextFiles
+														// To make sure it exists and know where it is
+		PrintWriter output = new PrintWriter(file); // PrintWritter resets data in file every time it executes
 
 		while (number != SENTINEL_VALUE) {
 			System.out.print("Enter any Integer (-1 to quit): ");
 			number = input.nextInt();
 			if (number != SENTINEL_VALUE) {
-				output.print(number + " ");
+				output.print(number + " ");	// Outputs value plus one space into file
 			} else {
-				continue;
+				continue;	// Once sentinel value is entered, break out of while without outputting sentinel value to file
 			}
 		}
 		System.out.println();
 		input.close();
 		output.close();
 		printDataFromFile(file);
-		System.out.println("Sum from " + file.getName() + ": " + getSum(file));
+		System.out.println("Sum from file " + file.getName() + ": " + getSum(file));
 
 	}
-
+	// Prints number in the file with a space in between
 	public static void printDataFromFile(File file) throws IOException {
 		System.out.println("Data from file " + file.getName() + ":");
 		try {
@@ -46,7 +47,7 @@ public class FileSum {
 			System.out.println(e.getMessage());
 		}
 	}
-
+	// Sums the numbers in the file.
 	public static int getSum(File file) {
 		int sum = 0;
 		try {
