@@ -15,7 +15,6 @@ public class ColorPanels extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setTitle("Colors Panel");
 		setResizable(false);
-		setVisible(true);
 		setLocationRelativeTo(null);
 	}
 
@@ -49,6 +48,8 @@ public class ColorPanels extends JFrame {
 		setButtonProperties(bPanel, bButton);
 		JButton yButton = new JButton("YELLOW");
 		setButtonProperties(yPanel, yButton);
+		
+		frame.setVisible(true);
 	}
 	// Used to place three super-panels to get proper alignment and sizing
 	public static void setParentPanelProperties(JFrame frame, JPanel panel, Color color, int location) {
