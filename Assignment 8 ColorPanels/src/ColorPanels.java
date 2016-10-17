@@ -55,7 +55,6 @@ public class ColorPanels extends JFrame {
 	public static void setParentPanelProperties(JFrame frame, JPanel panel, Color color, int location) {
 		panel.setBackground(color);
 		panel.setBounds(((frame.getWidth() / 3) * location), 0, (frame.getWidth() / 3), frame.getHeight());
-		panel.setVisible(true);
 		frame.getContentPane().add(panel);
 	}
 	// Used to place a sub-panel within a super-panel at a certain distance from both margins
@@ -63,19 +62,16 @@ public class ColorPanels extends JFrame {
 		childPanel.setBounds((parentPanel.getWidth() / 3), (parentPanel.getHeight() / 3), (parentPanel.getHeight() / 4),
 				(parentPanel.getWidth() / 4));
 		childPanel.setBackground(color);
-		childPanel.setVisible(true);
 		parentPanel.add(childPanel);
 	}
 	// Used to place a label within the super-panel as a label for it's sub-panel
 	public static void setLabelProperties(JPanel panel, JLabel label, Color color) {
 		label.setBounds((panel.getX() + (panel.getWidth() / 3) + 3), (panel.getY() - panel.getHeight()), 100, 100);
 		label.setForeground(color);
-		label.setVisible(true);
 		panel.getParent().add(label);
 	}
 	// Used to place a button within the super-panel as a button for it's sub-panel
 	public static void setButtonProperties(JPanel panel, JButton button) {
-		button.setEnabled(true);
 		button.setBounds((panel.getX() + (panel.getWidth() / 6)), panel.getHeight() + panel.getY() + 50, 100, 50);
 		button.setVisible(true);
 		panel.getParent().add(button);
