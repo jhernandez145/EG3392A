@@ -33,7 +33,7 @@ public class TemperatureConverter extends JFrame {
 		celsiusTextField.setPreferredSize(preferredSizeTextField);
 		JTextField fahrenheitTextField = new JTextField();
 		fahrenheitTextField.setPreferredSize(preferredSizeTextField);
-
+		fahrenheitTextField.setEditable(false);
 		JButton convertButton = new JButton("convert");
 		convertButton.setPreferredSize(preferredSizeButton);
 		convertButton.addActionListener(new ActionListener() {
