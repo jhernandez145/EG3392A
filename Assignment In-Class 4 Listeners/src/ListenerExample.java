@@ -11,7 +11,7 @@ import javax.swing.JFrame;
 public class ListenerExample extends JFrame {
 
 	private static final long serialVersionUID = 1L;
-	public int clickCount = 0;
+	public static int clickCount = 0;
 
 	public ListenerExample() {
 		Dimension dimension = new Dimension(500, 500);
@@ -25,8 +25,9 @@ public class ListenerExample extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				++clickCount;
 				getToolkit().beep();
-				System.out.println("Click #" + ++clickCount);
+				System.out.println("Click #" + clickCount);
 			}
 		});
 
