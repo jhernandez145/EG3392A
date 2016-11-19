@@ -20,7 +20,7 @@ public class BattleshipGUI extends JFrame {
 		panelContainer.setLayout(cl);
 		panelContainer.add(mainMenu, "0");
 		panelContainer.add(battleGrid, "1");
-		//panelContainer.add(nextMenu, "1"); ...
+		//panelContainer.add(nextMenu, "n"); ...
 		
 		cl.show(panelContainer, "0");
 		

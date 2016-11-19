@@ -18,7 +18,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class BattleGrid extends JPanel {
-	
+
 	private static int totalShots = 0;
 	private static int hitShots = 0;
 
@@ -37,7 +37,7 @@ public class BattleGrid extends JPanel {
 
 	private static Map<JButton, int[]> buttonToCoordMap = new HashMap<JButton, int[]>();
 
-	// TODO FIX: only inserts one 4-tile long battleship onto grid
+	// TODO FIX: only the 4-tile long Battleship is properly displayed when hit.
 
 	public BattleGrid() {
 		System.out.println("readying ships");
@@ -65,7 +65,12 @@ public class BattleGrid extends JPanel {
 				tile[x][y].setCoordinates(coords);
 				System.out.println(Arrays.toString(coords));
 				button.addActionListener(new ActionListener() {
-
+					// on pressing a button (tile) check to see if it has a
+					// Battleship on it. if so, set it to 'hit' and add one
+					// damage to the battleship. else, set it to 'miss'.
+					// if 'miss', set the button to color white and change
+					// text to 'miss', else, set the color to red and set the
+					// text to 'hit'.
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						totalShots++;
@@ -80,7 +85,7 @@ public class BattleGrid extends JPanel {
 							System.out.println("at coords: " + tile[coords[0]][coords[1]].getCoordinates());
 							System.out.println(b.isOnTile(tile[coords[0]][coords[1]]));
 							if (b.isOnTile(tile[coords[0]][coords[1]])) {
-								hitShots++;
+								hitShots++; // once this reaches 10, game ends
 								tile[coords[0]][coords[1]].setMiss(false);
 								tile[coords[0]][coords[1]].setHit(true);
 								button.setText("HIT");
@@ -98,8 +103,9 @@ public class BattleGrid extends JPanel {
 							}
 						}
 						System.out.println("t: " + totalShots + " h: " + hitShots);
-						if(hitShots == 10){
-							JOptionPane.showMessageDialog(null, "You won! only took you " + totalShots + " shots ", "Victory!", JOptionPane.INFORMATION_MESSAGE);
+						if (hitShots == 10) {
+							JOptionPane.showMessageDialog(null, "You won! only took you " + totalShots + " shots ",
+									"Victory!", JOptionPane.INFORMATION_MESSAGE);
 						}
 						System.out.println("\n\n\n");
 					}
@@ -195,7 +201,16 @@ public class BattleGrid extends JPanel {
 		return r.nextInt(8); // [0, 8)
 	}
 
+	// Checks to see if battleship can clear the board given a position and
+	// heading.
 	public static boolean hasClearance(Battleship b) {
+		// given a heading, traverse the length of the board given the length of
+		// the battleship. It first checks to see if the BATTLESHIP_POS +
+		// BATTLESHIP_LENGTH does not exit the bounds of the grid. if it does
+		// not, then check each tile in that selected area if it has been
+		// previously filled with a battleship. if so, then it
+		// does not have clearance.
+
 		if (b.getHeading() == Battleship.ShipHeader.NORTH) {
 			if (b.getHeadY() + b.getLength() > Y_LENGTH) {
 				return false;
@@ -249,7 +264,9 @@ public class BattleGrid extends JPanel {
 	}
 
 	public static void fillTile(Battleship b) {
-
+		// if there is a ship that occupies this tile, change isEmtpy to false
+		// traverses the entire grid, including every tile to determine the
+		// occupancy
 		for (int x = 0; x < X_LENGTH; x++) {
 			for (int y = 0; y < Y_LENGTH; y++) {
 				System.out.println("x: " + x + " y: " + y + " isOnTile: " + b.isOnTile(tile[x][y]) + " bx: "

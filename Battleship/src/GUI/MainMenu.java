@@ -26,9 +26,6 @@ public class MainMenu extends JPanel {
 		JButton loadGameButton = new JButton("Load Old Game");
 		JButton exitGameButton = new JButton("Abandon Ship");
 
-		/*newGameButton.setIcon(new ImageIcon("images/newGameBattleShip.JPG"));
-		newGameButton.setRolloverEnabled(true);
-		newGameButton.setRolloverIcon(new ImageIcon("images/newGameBattleShip.gif"));*/
 		
 		newGameButton.addActionListener(new ActionListener() {
 			
@@ -40,14 +37,9 @@ public class MainMenu extends JPanel {
 		});
 		newGamePanel.add(newGameButton);
 
-		/*loadGameButton.setIcon(new ImageIcon("images/loadOldGameBattleShip.JPG"));
-		loadGameButton.setRolloverEnabled(true);
-		loadGameButton.setRolloverIcon(new ImageIcon("images/loadOldGameBattleShip.gif"));*/
+		
 		loadGamePanel.add(loadGameButton);
 
-		/*exitGameButton.setIcon(new ImageIcon("images/lifeRaft.JPG"));
-		exitGameButton.setRolloverEnabled(true);
-		exitGameButton.setRolloverIcon(new ImageIcon("images/lifeRaft.gif"));*/
 		
 		exitGameButton.addActionListener(new ActionListener() {
 			
@@ -59,7 +51,6 @@ public class MainMenu extends JPanel {
 		exitGamePanel.add(exitGameButton);
 
 		panel.add(newGamePanel);
-		//panel.add(loadGamePanel);
 		panel.add(exitGamePanel);
 
 		add(panel, BorderLayout.CENTER);

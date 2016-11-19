@@ -83,7 +83,10 @@ public class Battleship {
 	public boolean isOnTile(Tile t) {
 		int[] tileCoords = t.getCoordinates();
 
-		// along the ship
+		// given an orientation, traverse the tile in that direction and see if
+		// battleship coordinates match.
+
+		// along the ship given a NORTH heading
 		if (heading == ShipHeader.NORTH) {
 			for (int i = 0; i < length; i++) {
 				if (headX == tileCoords[0] && headY + i == tileCoords[1]) {
@@ -92,7 +95,7 @@ public class Battleship {
 					continue;
 				}
 			}
-
+			// along the ship given a SOUTH heading
 		} else if (heading == ShipHeader.SOUTH) {
 			for (int i = 0; i < length; i++) {
 				if (headX == tileCoords[0] && headY - i == tileCoords[1]) {
@@ -101,7 +104,7 @@ public class Battleship {
 					continue;
 				}
 			}
-
+			// along the ship given a EAST heading
 		} else if (heading == ShipHeader.EAST) {
 			for (int i = 0; i < length; i++) {
 				if (headX + i == tileCoords[0] && headY == tileCoords[1]) {
@@ -110,7 +113,7 @@ public class Battleship {
 					continue;
 				}
 			}
-
+			// along the ship given a WEST heading
 		} else if (heading == ShipHeader.WEST) {
 			for (int i = 0; i < length; i++) {
 				if (headX - i == tileCoords[0] && headY == tileCoords[1]) {
