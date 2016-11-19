@@ -142,6 +142,10 @@ public class BattleGrid extends JPanel {
 		System.out.println("battle grid done");
 	}
 
+	/*
+	 * TODO battleships may now overlap, since are randomly placed it is hard to
+	 * reproduce result. It does not happen often.
+	 */
 	public static void readyShipsAI() {
 		for (int i = 0; i < tile.length; i++) {
 			for (int j = 0; j < tile[i].length; j++) {
